@@ -22,7 +22,7 @@ def index():
                      apellidos = create_form.apellidos.data,
                      email = create_form.email.data
                      )
-        db.session.add(Alumnos)
+        db.session.add(alum)
         db.session.commit()
     return render_template('index.html', form = create_form)
         
