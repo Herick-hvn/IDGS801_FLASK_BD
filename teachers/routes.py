@@ -37,7 +37,7 @@ def insert_teachers():
     insert_teachers = None
     if request.method=='POST':
         insert_teacher(name, surname, email, datetime.now())
-    return render_template("insert.html", form=create_form, insert_teachers=insert_teachers)
+    return render_template("insert_teachers.html", form=create_form, insert_teachers=insert_teachers)
 
 
 @teachers.route('/update_teachers', methods=['GET', 'POST'])
@@ -59,7 +59,7 @@ def update_teachers():
         surname = create_form.surname.data
         email = create_form.email.data
         update_teacher(id, name, surname, email)
-    return render_template("update.html", form=create_form, update_teachers=update_teachers)
+    return render_template("update_teachers.html", form=create_form, update_teachers=update_teachers)
 
 @teachers.route('/delete_teachers', methods=['GET', 'POST'])
 def delete_teachers():
@@ -77,7 +77,7 @@ def delete_teachers():
     if request.method=='POST':
         id = create_form.id.data 
         delete_teacher(id)
-    return render_template("delete.html", form=create_form, update_teachers=delete_teachers)
+    return render_template("delete_teachers.html", form=create_form, update_teachers=delete_teachers)
 
 
 
